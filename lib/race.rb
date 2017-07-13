@@ -7,7 +7,7 @@ module RaceBet
       def score(guesses, winners)
         points_hash = init_points_hash
 
-        guesses.each_with_index.map do |guess, i|
+        guesses.slice(0, 5).each_with_index.map do |guess, i|
           next if winners.index(guess).nil?
 
           guess == winners[i] ? points_hash[i + 1] : MISPLACING_POINT
