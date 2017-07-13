@@ -15,6 +15,14 @@ RSpec.describe RaceBet::Race do # rubocop:disable Metrics/BlockLength
     end
   end
 
+  context 'all 6 guesses are correct' do
+    let(:winners) { guesses }
+
+    it 'calculates 15, 10, 5, 3, 1 points and no point for 6th place' do
+      expect(subject).to eq(15 + 10 + 5 + 3 + 1)
+    end
+  end
+
   context 'no points for no correct guesses' do
     let(:winners) { (0..guesses.size - 1).to_a }
 
