@@ -7,7 +7,7 @@ Fill in the `score` routine in the `RaceBet::Race` class which accepts two argum
 * an `Array` of guesses, for example `[:bob, :mark, :walter]` which models a prediction that Bob will have finished first, Mark second and Walter third
 * an `Array` of actual winners, for example `[:mark, :bob, :walter]`
 
-In this example the scoring function must calculate `7` points, according to following rules:
+In this example the scoring function must calculate `6` points, according to following rules:
 * correct first place guess - 15 points
 * correct second place guess - 10 points
 * correct third place guess - 5 points
