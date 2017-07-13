@@ -15,15 +15,13 @@ module RaceBet
       end
 
       def score(guesses, winners)
-        result = 0
         points_hash = init_points
 
-        guesses.each_with_index do |guess, i|
+        guesses.each_with_index.map do |guess, i|
           next if winners.index(guess).nil?
 
-          result += guess == winners[i] ? points_hash[i + 1] : MISPLACING_POINT
-        end
-        result
+          guess == winners[i] ? points_hash[i + 1] : MISPLACING_POINT
+        end.compact.inject(:+) || 0
       end
     end
   end
